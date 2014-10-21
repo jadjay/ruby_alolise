@@ -6,8 +6,11 @@ def ask_question item, clas
 end
 
 # refactored extract method
-def create_people resp, clas, pers
-		if clas.is_a? Array and clas.include?(resp) or resp.is_a? clas
+def create_people resp, item, clas, pers
+		if resp == ''
+    elsif clas.is_a? Array and clas.include?(resp)
+			pers.store(item, resp)
+    elsif resp.is_a? clas 
 			pers.store(item, resp)
 		end
     pers
@@ -30,7 +33,7 @@ while temp != ""
     # rename res
     temp = ask_question item,clas
     # rename method we're on building someone
-    pers = create_people temp, clas, pers
+    pers = create_people temp, item, clas, pers
 	end
 	personnes.push(pers) if pers != {}
 end
