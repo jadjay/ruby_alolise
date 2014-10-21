@@ -19,11 +19,16 @@ while temp != ""
 		'age' => Integer,
 		'sexe' => ['M','F'],
 	}.each do |item,clas|
+    # rename res
     temp = ask_question item,clas
+    # refactor extract method
 		if temp == ""
+    # use a case select
+    # code spagetti !!!
 		elsif clas.is_a? Array and clas.include?(temp)
 			pers.store(item, temp)
 		elsif temp.is_a? clas
+      # 2 time same thing remove
 			pers.store(item, temp)
 		end
 	end
