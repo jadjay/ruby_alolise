@@ -17,6 +17,7 @@ temp='something'
 personnes=[]
 # use bool
 while temp != ""
+  # extract method 
   # don't need declaration
 	pers={}
   # dont use class for a word
@@ -28,6 +29,7 @@ while temp != ""
 	}.each do |item,clas|
     # rename res
     temp = ask_question item,clas
+    # rename method we're on building someone
     pers = create_people temp, clas, pers
 	end
 	personnes.push(pers) if pers != {}
