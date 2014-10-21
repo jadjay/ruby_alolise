@@ -1,13 +1,19 @@
 #!/usr/bin/env ruby
 temp='something'
 personnes=[]
+# use bool
 while temp != ""
+  # don't need declaration
 	pers={}
+  # dont use class for a word
+  # the reader is lost
 	{
 		'name' => String,
 		'age' => Integer,
 		'sexe' => ['M','F'],
 	}.each do |item,clas|
+    # extract method ask_question 
+    # please don't use format
 		print "Please give %s (%s): " % [item, clas]
 		temp = gets.chomp
 		if temp == ""
