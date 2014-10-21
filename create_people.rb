@@ -1,4 +1,11 @@
 #!/usr/bin/env ruby
+def ask_question item, clas
+    # extract method ask_question 
+    # please don't use format
+		print "Please give %s (%s): " % [item, clas]
+		gets.chomp
+end
+
 temp='something'
 personnes=[]
 # use bool
@@ -12,10 +19,7 @@ while temp != ""
 		'age' => Integer,
 		'sexe' => ['M','F'],
 	}.each do |item,clas|
-    # extract method ask_question 
-    # please don't use format
-		print "Please give %s (%s): " % [item, clas]
-		temp = gets.chomp
+    temp = ask_question item,clas
 		if temp == ""
 		elsif clas.is_a? Array and clas.include?(temp)
 			pers.store(item, temp)
